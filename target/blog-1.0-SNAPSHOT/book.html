@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style_book.css">
+</head>
+
+<body style="background-color: rgb(240, 222, 219);">
+    <input id="pageNum" type="text" style="display: none" th:value="${param.back}">
+
+    <div class="backIcon" id="backIcon">
+        <svg t="1639390262030" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="1275" width="64" height="64">
+            <path
+                d="M426.666667 384V213.333333l-298.666667 298.666667 298.666667 298.666667v-174.933334c213.333333 0 362.666667 68.266667 469.333333 217.6-42.666667-213.333333-170.666667-426.666667-469.333333-469.333333z"
+                p-id="1276" fill="#fdeae6"></path>
+        </svg>
+    </div>
+    <div class="articleContainer" id="articleContainer" style="display: none;">
+        <div class="articleBox" th:each="content : ${contents}">
+            <div class="title">
+                <h4 th:text="${content.title}"></h4>
+            </div>
+            <div class="articleSummary" th:text="${content.description}"></div>
+            <div class="articleInfo">
+                <p>
+                    <span class="tagsContainer" id="tagsContainer">
+                        <span class="tags" th:each="tag : ${tags[contentStat.index]}" th:text="${tag}"></span>
+                    </span>
+                    <span class="writedDate" th:text="${#dates.format(content.created_time, 'yyyy-MM-dd')}"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="click_cover"></div>
+    <div class="return_cover"></div>
+    <div class="book" id="book">
+        <div class="gap"></div>
+        <div class="pages">
+            <div class="page"></div>
+            <div class="page"></div>
+            <div class="page" id="leftPage">
+            </div>
+            <div class="page" id="rightPage">
+            </div>
+            <div class="page"></div>
+            <div class="page"></div>
+        </div>
+        <div id="flip" class="flips">
+            <div class="flip flip1">
+                <div class="f2nest">
+                    <div class="innerflip"></div>
+                </div>
+                <div class="innerflip"></div>
+                <div class="flip flip2">
+                    <div class="f2nest">
+                        <div class="innerflip"></div>
+                    </div>
+                    <div class="innerflip"></div>
+                    <div class="flip flip3">
+                        <div class="f2nest">
+                            <div class="innerflip"></div>
+                        </div>
+                        <div class="innerflip"></div>
+                        <div class="flip flip4">
+                            <div class="f2nest">
+                                <div class="innerflip"></div>
+                            </div>
+                            <div class="innerflip"></div>
+                            <div class="flip flip5">
+                                <div class="f2nest">
+                                    <div class="innerflip"></div>
+                                </div>
+                                <div class="innerflip"></div>
+                                <div class="flip flip6">
+                                    <div class="f2nest">
+                                        <div class="innerflip"></div>
+                                    </div>
+                                    <div class="innerflip"></div>
+                                    <div class="flip flip7">
+                                        <div class="f2nest">
+                                            <div class="innerflip"></div>
+                                        </div>
+                                        <div class="innerflip"></div>
+                                        <div class="flip flip8">
+                                            <div class="f2nest">
+                                                <div class="innerflip"></div>
+                                            </div>
+                                            <div class="innerflip"></div>
+                                            <div class="flip flip9">
+                                                <div class="f2nest">
+                                                    <div class="innerflip"></div>
+                                                </div>
+                                                <div class="innerflip"></div>
+                                                <div class="flip flip10">
+                                                    <div class="f2nest">
+                                                        <div class="innerflip"></div>
+                                                    </div>
+                                                    <div class="innerflip"></div>
+                                                    <div class="flip flip11">
+                                                        <div class="f2nest">
+                                                            <div class="innerflip"></div>
+                                                        </div>
+                                                        <div class="innerflip"></div>
+                                                        <div class="flip flip12">
+                                                            <div class="f2nest">
+                                                                <div class="innerflip"></div>
+                                                            </div>
+                                                            <div class="innerflip"></div>
+                                                            <div class="flip flip13">
+                                                                <div class="f2nest">
+                                                                    <div class="innerflip"></div>
+                                                                </div>
+                                                                <div class="innerflip"></div>
+                                                                <div class="flip flip14">
+                                                                    <div class="f2nest">
+                                                                        <div class="innerflip"></div>
+                                                                    </div>
+                                                                    <div class="innerflip"></div> ;
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="leftButton" id="leftButton">
+        < </div>
+            <div class="rightButton" id="rightButton"> > </div>
+            <script src="js/book.js"></script>
+</body>
+
+</html>

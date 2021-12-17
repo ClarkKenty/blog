@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@3.3/pics/bgi.png');
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.el-footer {
+    /* background-color: rgb(95, 158, 160); */
+    color: black;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-menu-item,
+.el-submenu__title {
+    font-size: 17px;
+    color: wheat;
+}
+
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-main {
+    color: #333;
+    text-align: center;
+}
+
+body>.el-container {
+    margin-bottom: 40px;
+
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+.compass {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 5%;
+    top: 80%;
+    user-select: none;
+}
+
+.compass img {
+    transition: transform ease .3s;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+
+.navbar {
+    padding-top: 15px;
+    width: 100%;
+    height: 140px;
+    background-color: transparant;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: navbarFall 1s ease-out 1;
+
+}
+
+@keyframes navbarFall {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.navbar ul {
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+}
+
+.navbar li {
+    margin-right: 120px;
+    float: left;
+    font-size: 16px;
+    list-style: none;
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22923),auto; */
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+    user-select: none;
+    position: relative;
+    transition: top .7s;
+    top: 0;
+}
+
+.navbar li:last-of-type {
+    margin-right: 0;
+
+}
+
+.navbar li:hover {
+    top: 30px;
+}
+
+.navbar li img {
+    width: 24px;
+}
+
+.navbar li a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22923),auto; */
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+    user-select: none;
+}
+
+.nav_inside {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.nav_inside li .navBox {
+    position: relative;
+    transform: rotate(5deg);
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(223, 220, 212);
+    background: linear-gradient(to bottom, rgb(197, 194, 194), white);
+    box-shadow: 5px 5px 10px gray;
+    z-index: 9999;
+    transition: transform ease .7s;
+}
+
+/* .nav_inside ul li:nth-child(2n+1) .navBox{
+    transform: rotate(-5deg);
+
+} */
+
+.nav_inside li .navBox:hover {
+    transform: rotate(0deg);
+}
+
+
+.nav_inside li .navBox .leftString {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    width: 90px;
+    height: 5px;
+    background-image: url("../imgs/rope.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    transform-origin: 0 0;
+    transform: rotate(-80deg);
+    box-shadow: 2px 2px 4px gray;
+
+}
+
+.nav_inside li .navBox .rightString {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    width: 80px;
+    height: 5px;
+    background-image: url("../imgs/rope.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    transform-origin: 100% 0;
+    transform: rotate(80deg);
+    box-shadow: -1px -1px 4px gray;
+
+
+
+}
+
+.nav_inside li .navBox .pinned {
+    position: absolute;
+    top: -100px;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    background-image: url('../imgs/pinned.png');
+    background-size: 100% 100%;
+    z-index: 99999;
+}
+
+.nav_inside li .navBox a {
+    display: inline-block;
+    color: black;
+
+}
+
+.nav_inside li .navBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(97, 177, 177);
+    border-radius: 10px 10px 0 0;
+
+}
+
+.nav_inside li .navBox::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(97, 177, 177);
+    border-radius: 0 0 10px 10px;
+}
+
+/* .nav_inside li::before {
+    content: "";
+    position: absolute;
+    left: 43px;
+    background-color: gray;
+    width: 100px;
+    height: 2px;
+    transform-origin: 0 0;
+
+    transform: rotate(-90deg);
+
+    background: silver;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+} */
+
+/* .nav_inside li::after{
+    content: "";
+    position: absolute;
+    left: 43px;
+    background-color: black;
+    width: 100px;
+    height: 2px;
+    transform-origin: 0 0;
+    transform: rotate(-140deg);
+
+} */
+
+
+iframe {
+    pointer-events: none;
+    user-select: none;
+}
+
+.topDraw {
+    position: absolute;
+    top: -60px;
+    left: -3500px;
+    width: 8000px;
+    height: 120vh;
+    transform-origin: 0 0;
+    transform: rotateX(180deg);
+    z-index: 999;
+}
+
+.topDraw1 {
+    background-color: rgb(233, 205, 193);
+}
+
+.topDraw2 {
+    background-color: rgb(35, 172, 92);
+}
+
+.topDraw3 {
+    background-color: darkcyan;
+}
+
+.topDraw4 {
+    background-color: cornflowerblue;
+}
+
+.annexx_noise {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url(https://static.tildacdn.com/tild3265-3261-4333-a361-353739633737/noise.gif);
+    background-size:
+        /*!size!*/
+        200px
+        /*!/size!*/
+    ;
+    opacity:
+        /*!opacity!*/
+        10%
+        /*!/opacity!*/
+    ;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999999;
+    pointer-events: none;
+}
+
+.page2 {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #48b379;
+    color: #eee9dc;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 5%;
+    font-size: 100%;
+    font-family: "Noto Sans", sans-serif;
+}
+
+#app {
+    width: 100%;
+    overflow: hidden;
+}
+
+.page2 h2 {
+    margin: 3em 0 0 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page2 #timeline {
+    width: 80%;
+    list-style: none;
+    margin: 50px 0 30px 120px;
+    padding-left: 30px;
+    border-left: 8px solid #eee9dc;
+}
+
+.page2 #timeline li {
+    margin: 40px 0;
+    position: relative;
+}
+
+.page2 #timeline p {
+    margin: 0 0 15px;
+}
+
+
+.page2 .date {
+    margin-top: -10px;
+    top: 50%;
+    left: -158px;
+    font-size: 0.95em;
+    line-height: 20px;
+    position: absolute;
+}
+
+.page2 .circle {
+    margin-top: -10px;
+    top: 50%;
+    left: -44px;
+    width: 10px;
+    height: 10px;
+    background: #48b379;
+    border: 5px solid #eee9dc;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+}
+
+.page2 .content {
+    max-height: 20px;
+    padding: 50px 20px 0;
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.page2 .content p{
+    line-height: 30px;
+}
+
+.page2 .content:before,
+.page2 .content:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    position: absolute;
+    pointer-events: none;
+    right: 100%;
+}
+
+.page2 .content:before {
+    border-right-color: inherit;
+    border-width: 20px;
+    top: 50%;
+    margin-top: -20px;
+}
+
+.page2 .content:after {
+    border-right-color: #48b379;
+    border-width: 17px;
+    top: 50%;
+    margin-top: -17px;
+}
+
+.page2 .content p {
+    max-height: 0;
+    color: transparent;
+    text-align: justify;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+
+.page2 label {
+    font-size: 1.3em;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    top: 20px;
+    transition: transform 0.2s linear;
+}
+
+.page2 .radio {
+    display: none;
+}
+
+.page2 .radio:checked+.relative label {
+    cursor: auto;
+    transform: translateX(42px);
+}
+
+.page2 .radio:checked+.relative .circle {
+    background: #f98262;
+}
+
+.page2 .radio:checked~.content {
+    max-height: 180px;
+    border-color: #eee9dc;
+    margin-right: 20px;
+    transform: translateX(20px);
+    transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+}
+
+.page2 .radio:checked~.content p {
+    max-height: 200px;
+    color: #eee9dc;
+    transition: color 0.3s linear 0.3s;
+}
+
+/* -------------------------------------
+   * mobile phones (vertical version only)
+   * ------------------------------------- */
+@media screen and (max-width: 767px) {
+    #timeline {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
+
+    #timeline li {
+        margin: 50px 0;
+    }
+
+    label {
+        width: 85%;
+        font-size: 1.1em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+        transform: translateX(18px);
+    }
+
+    .content {
+        padding-top: 45px;
+        border-color: #eee9dc;
+    }
+
+    .content:before,
+    .content:after {
+        border: solid transparent;
+        bottom: 100%;
+    }
+
+    .content:before {
+        border-bottom-color: inherit;
+        border-width: 17px;
+        top: -16px;
+        left: 50px;
+        margin-left: -17px;
+    }
+
+    .content:after {
+        border-bottom-color: #48b379;
+        border-width: 20px;
+        top: -20px;
+        left: 50px;
+        margin-left: -20px;
+    }
+
+    .content p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    .circle,
+    .date {
+        display: none;
+    }
+}

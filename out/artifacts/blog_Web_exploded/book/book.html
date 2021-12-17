@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookEffect</title>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: rgb(240, 222, 219);">
+<div class="click_cover"></div>
+<div class="return_cover"></div>
+<div class="book" id="book">
+    <div class="gap"></div>
+    <div class="pages">
+        <div class="page"></div>
+        <div class="page"></div>
+        <div class="page" id="leftPage">
+            <div class="innerpage">
+                <div class="articleBox">
+                    <div class="title">
+                        <h4> c++11 中的正则表达式函数 </h4>
+                    </div>
+                    <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                        Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                        c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">C++</span>
+                            <span class="tags">STL</span>
+                            <span class="writedDate">2021-04-19</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="articleBox">
+                    <div class="title">
+                        <h4> SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                    </div>
+                    <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                        一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下： 程序并没有报错，反而完整地执行了所有语句。 然而，书上却有这样一句话：
+                        除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。 上面的SELECT和GROUP BY分别是这样写的： </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">SQL</span>
+                            <span class="writedDate">2021-04-14</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="articleBox">
+                    <div class="title">
+                        <h4> Java学习笔记二(CH5-6) </h4>
+                    </div>
+                    <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                        )。Java所有的继承均为公有继承。
+                        Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                        继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">Java</span>
+                            <span class="tags">notes</span>
+                            <span class="writedDate">2021-04-19</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="rightPage">
+            <div class="innerpage">
+                <div class="articleBox">
+                    <div class="title">
+                        <h4>(2) c++11 中的正则表达式函数 </h4>
+                    </div>
+                    <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                        Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                        c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">C++</span>
+                            <span class="tags">STL</span>
+                            <span class="writedDate">2021-04-19</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="articleBox">
+                    <div class="title">
+                        <h4>(2) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                    </div>
+                    <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                        一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下： 程序并没有报错，反而完整地执行了所有语句。 然而，书上却有这样一句话：
+                        除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。 上面的SELECT和GROUP BY分别是这样写的： </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">SQL</span>
+                            <span class="writedDate">2021-04-14</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="articleBox">
+                    <div class="title">
+                        <h4>(2) Java学习笔记二(CH5-6) </h4>
+                    </div>
+                    <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                        )。Java所有的继承均为公有继承。
+                        Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                        继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                    <div class="articleInfo">
+                        <p>
+                            <span class="tags">Java</span>
+                            <span class="tags">notes</span>
+                            <span class="writedDate">2021-04-19</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page"></div>
+        <div class="page"></div>
+    </div>
+    <div id="flip" class="flips">
+        <div class="flip flip1">
+            <div class="f2nest">
+                <div class="innerflip"></div>
+            </div>
+            <div class="innerflip"></div>
+            <div class="flip flip2">
+                <div class="f2nest">
+                    <div class="innerflip"></div>
+                </div>
+                <div class="innerflip"></div>
+                <div class="flip flip3">
+                    <div class="f2nest">
+                        <div class="innerflip"></div>
+                    </div>
+                    <div class="innerflip"></div>
+                    <div class="flip flip4">
+                        <div class="f2nest">
+                            <div class="innerflip"></div>
+                        </div>
+                        <div class="innerflip"></div>
+                        <div class="flip flip5">
+                            <div class="f2nest">
+                                <div class="innerflip"></div>
+                            </div>
+                            <div class="innerflip"></div>
+                            <div class="flip flip6">
+                                <div class="f2nest">
+                                    <div class="innerflip"></div>
+                                </div>
+                                <div class="innerflip"></div>
+                                <div class="flip flip7">
+                                    <div class="f2nest">
+                                        <div class="innerflip"></div>
+                                    </div>
+                                    <div class="innerflip"></div>
+                                    <div class="flip flip8">
+                                        <div class="f2nest">
+                                            <div class="innerflip"></div>
+                                        </div>
+                                        <div class="innerflip"></div>
+                                        <div class="flip flip9">
+                                            <div class="f2nest">
+                                                <div class="innerflip"></div>
+                                            </div>
+                                            <div class="innerflip"></div>
+                                            <div class="flip flip10">
+                                                <div class="f2nest">
+                                                    <div class="innerflip"></div>
+                                                </div>
+                                                <div class="innerflip"></div>
+                                                <div class="flip flip11">
+                                                    <div class="f2nest">
+                                                        <div class="innerflip"></div>
+                                                    </div>
+                                                    <div class="innerflip"></div>
+                                                    <div class="flip flip12">
+                                                        <div class="f2nest">
+                                                            <div class="innerflip"></div>
+                                                        </div>
+                                                        <div class="innerflip"></div>
+                                                        <div class="flip flip13">
+                                                            <div class="f2nest">
+                                                                <div class="innerflip"></div>
+                                                            </div>
+                                                            <div class="innerflip"></div>
+                                                            <div class="flip flip14">
+                                                                <div class="f2nest">
+                                                                    <div class="innerflip"></div>
+                                                                </div>
+                                                                <div class="innerflip"></div> ;
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul th:each="content : ${contents}">
+    <li th:text="${content.title}"/>
+</ul>
+<p th:text="${hello}">hello</p>
+
+
+<div class="leftButton" id="leftButton">
+    < </div>
+<div class="rightButton" id="rightButton"> > </div>
+<script>
+
+    let urlParam = window.location.search;
+    if (urlParam.includes("back=true")) {
+        document.querySelector('.return_cover').style = 'display:block;';
+        setTimeout(() => {
+            document.querySelector('.return_cover').classList.add('scaleDown');
+        }, 100);
+    }
+    let buttonLock = false;
+
+    function generateFlip1(flipOver) {
+        let innerflips = document.querySelectorAll('.flip>.innerflip');
+        for (let i = 0; i < innerflips.length; i++) {
+            innerflips[i].innerHTML = flipOver;
+            innerflips[i].querySelector('.innerpage').style = `margin-left: -${-29 + 50 * (13 - i)}px;`;
+            if (i == 13) {
+                innerflips[i].style = "padding-left:4px;";
+            }
+        }
+        let articleBox = document.querySelectorAll('#flip .articleBox');
+        for (let i = 0; i < articleBox.length; i++) {
+            articleBox[i].style = "pointer-events: none;";
+        }
+    }
+    function generateFlip2(flipBefore) {
+        let innerflips = document.querySelectorAll('.flip .f2nest>.innerflip');
+        for (let i = 0; i < innerflips.length; i++) {
+            innerflips[i].innerHTML = flipBefore;
+            innerflips[i].querySelector('.innerpage').style = `margin-left: -${-25 + 50 * (i)}px;`;
+
+        }
+
+    }
+
+    let leftButton = document.getElementById('leftButton');
+    leftButton.onclick = () => {
+        let flipBefore = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        let flipOver = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        let beforePage = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4> c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4> SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4> Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        if (buttonLock) return;
+        buttonLock = true;
+        generateFlip1(flipOver);
+        generateFlip2(flipBefore);
+
+        document.getElementById('flip').style = 'display:block';
+        let flip1 = document.querySelectorAll('.flip1');
+        let flip2 = document.querySelectorAll('.flip1 .flip')
+        for (let i = 0; i < flip1.length; i++) {
+            flip1[i].classList.add('fl1_an1');
+        }
+        for (let i = 0; i < flip2.length; i++) {
+            flip2[i].classList.add('fl2_an1');
+        }
+        document.getElementById('leftPage').innerHTML = beforePage;
+
+        setTimeout(() => {
+            document.getElementById('rightPage').innerHTML = flipBefore;
+            buttonLock = false;
+        }, 3000);
+        let flips = document.querySelectorAll('.flip');
+        for (let i = 0; i < flips.length; i++) {
+            flips[i].style = "display:block;";
+            flips[i].style = "animation-play-state:running;"
+            setTimeout(() => {
+                flips[i].style = "animation-play-state:paused;"
+                flips[i].style = "display:none;";
+                for (let i = 0; i < flip1.length; i++) {
+                    flip1[i].classList.remove('fl1_an1');
+                }
+                for (let i = 0; i < flip2.length; i++) {
+                    flip2[i].classList.remove('fl2_an1');
+                }
+            }, 3000);
+
+        }
+    }
+    let rightButton = document.getElementById('rightButton');
+    rightButton.onclick = () => {
+        let flipBefore = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(2) Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        let flipOver = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(3) Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        let overPage = `<div class="innerpage">
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(4) c++11 中的正则表达式函数 </h4>
+                        </div>
+                        <div class="articleSummary"> 正则表达式可以说是一门微型语言，存在于目前大部分流行的编程语言之中。 c++ 11在Standard
+                            Library中新增了对正则表达式的支持，包含于regex头文件中。（还是我国的一位老哥写的） c++11中的正则匹配性能可能不太行，如要追求速度，可以使用Boost库或者其他语言。
+                            c++主要有三种正则匹配算法：regex_match,regex_search,match_result。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">C++</span>
+                                <span class="tags">STL</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(4) SQL在SELECT语句中使用不存在于GROUP BY.. </h4>
+                        </div>
+                        <div class="articleSummary"> 最近在做SQL的题目中遇到了这样一种情况： 一道题目为 ：检索学过001号教师主讲的所有课程的所有同学的姓名
+                            一共有五张表Student；Department；Course；Teacher；SC 假设创建五张表的语句如下：
+                            程序并没有报错，反而完整地执行了所有语句。
+
+                            然而，书上却有这样一句话：
+                            
+                            除聚集函数外，SELECT语句中地每个列都必须在GROUP BY子句中给出。
+                            
+                            上面的SELECT和GROUP BY分别是这样写的： </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">SQL</span>
+                                <span class="writedDate">2021-04-14</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="articleBox">
+                        <div class="title">
+                            <h4>(4) Java学习笔记二(CH5-6) </h4>
+                        </div>
+                        <div class="articleSummary">Chapter 5 Java中的继承于C++类似，Java用关键字extends替代了C++中的冒号( :
+                            )。Java所有的继承均为公有继承。
+                            Java中的super并不等同于this引用。super不是一个对象的引用，而只是一个指示编辑器调用超类方法的关键字，不能将super赋给另一个对象变量。
+                            继承出来的子类不能访问父类的私有域 Java中不需要虚函数，对象的引用将自动进行动态绑定并自动选择调用的方法。 若不希望出现虚拟特征的方法，可将其标记为final。 </div>
+                        <div class="articleInfo">
+                            <p>
+                                <span class="tags">Java</span>
+                                <span class="tags">notes</span>
+                                <span class="writedDate">2021-04-19</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`
+        if (buttonLock) return;
+        buttonLock = true;
+        generateFlip1(flipOver);
+        generateFlip2(flipBefore);
+
+        document.getElementById('flip').style = 'display:block';
+        let flip1 = document.querySelectorAll('.flip1');
+        let flip2 = document.querySelectorAll('.flip1 .flip')
+        for (let i = 0; i < flip1.length; i++) {
+            flip1[i].classList.add('fl1_an2');
+        }
+        for (let i = 0; i < flip2.length; i++) {
+            flip2[i].classList.add('fl2_an2');
+        }
+        document.getElementById('rightPage').innerHTML = overPage;
+        setTimeout(() => {
+            document.getElementById('leftPage').innerHTML = flipOver;
+            buttonLock = false;
+        }, 3000);
+        let flips = document.querySelectorAll('.flip');
+        for (let i = 0; i < flips.length; i++) {
+            flips[i].style = "display:block;";
+            flips[i].style = "animation-play-state:running;"
+            setTimeout(() => {
+                flips[i].style = "animation-play-state:paused;"
+                flips[i].style = "display:none;";
+                for (let i = 0; i < flip1.length; i++) {
+                    flip1[i].classList.remove('fl1_an2');
+                }
+                for (let i = 0; i < flip2.length; i++) {
+                    flip2[i].classList.remove('fl2_an2');
+                }
+            }, 3000);
+        }
+    }
+    let articleBoxes = document.querySelectorAll('.articleBox');
+    for (let i = 0; i < articleBoxes.length; i++) {
+        articleBoxes[i].onclick = (e) => {
+            setTimeout(() => {
+                window.location.href = "../article/article.html";
+            }, 1000);
+            let click_cover = document.querySelector('.click_cover');
+            click_cover.style = `left:${e.clientX}px;top:${e.clientY}px;transform:scale(200)`;
+        }
+    }
+</script>
+</body>
+
+</html>

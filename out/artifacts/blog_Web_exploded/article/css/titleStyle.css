@@ -1,0 +1,177 @@
+.headline {
+  font-family: "Satisfy", sans-serif;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  perspective: 1000px;
+  font-weight: normal;
+  color: #0a643a;
+}
+
+.word,
+.char {
+  -webkit-animation-delay: var(--del);
+  animation-delay: var(--del);
+  -webkit-animation-direction: var(--dir, normal);
+  animation-direction: var(--dir, normal);
+  -webkit-animation-duration: var(--dur);
+  animation-duration: var(--dur);
+  -webkit-animation-iteration-count: var(--it, 1);
+  animation-iteration-count: var(--it, 1);
+  -webkit-animation-name: var(--name);
+  animation-name: var(--name);
+  -webkit-animation-timing-function: var(--tf);
+  animation-timing-function: var(--tf);
+  -webkit-animation-fill-mode: var(--fill, forwards);
+  animation-fill-mode: var(--fill, forwards);
+  display: inline-block;
+  position: relative;
+  transform-origin: 50% 100%;
+  z-index: 1;
+}
+
+.headline--hide {
+  --dur: 3s;
+}
+
+
+
+.word{
+  transition: transform 1s ease;
+}
+
+/* .headline--hide .word:after {
+  -webkit-animation: hide-cover calc(var(--dur)) ease-out 1;
+  animation: hide-cover calc(var(--dur)) ease-out 1;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcsAAAAVCAYAAAApQcWsAAAACXBIWXMAACxKAAAsSgF3enRNAAAB1ElEQVR4nO3d4VHCQBCG4V2G/9CBdmBKsAPpQEuxBK1A7YASpINYgaGDUMEyFy4OJAQhd0cYeJ8Zxz+SOS7MfNnjvFUzk0umqpmITI8c4il/2/SYaBrcmCaJro3btrjgd1+KSD7wGHI/jnMpzWzo94xEgsJSVZsBc+9/mrqCyAXbAzcXAI62SvwgkvJB5zvBNXMzS/5Q1ApLVZ36aqiu0rYD0P2+Sz0oAAAG8tNYkZib2dtfWKrqp68ACUMAADZWZjYdyyYoX0XkmYkBAGDHRFVnVWWpqiWbUAAA2Ot95BKToAQAoFM2EpEZ8wMAQKdMRaRgUw8AAN1cWF72qQQAAAxrMeIGAABwUE5lCQBAt1W9wQcAALS5oJyZWUFYAgCwy4Xkl6sozaw6z9ad4LNkNywARLH0/2EQU4rDx2XgzjBJO7RsnXF+yL4GH6U/mL015+47y7mIPKUaNICrE6M1WIwAKCIFU+GW2SJcB1ds7D+0hCVwnNDKITQkQl9/lnZGwLVR33brlzuLHpqtbE4R0pg3pKKgQS+Ak9UHqec0YY4mpPLoWzWEfPfAEhQA/KMOyxcR+TjDZPXt8B0SBn0DiOUqAEBlu/nzvp1BXVjKAgDcBhFZA7dBkkZ9pTtFAAAAAElFTkSuQmCC);
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  z-index: 2;
+} */
+
+.underLine{
+  transition: transform 2s ease;
+  -webkit-animation: hide-cover calc(var(--dur)) ease-out 1;
+  animation: hide-cover calc(var(--dur)) ease-out 1;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcsAAAAVCAYAAAApQcWsAAAACXBIWXMAACxKAAAsSgF3enRNAAAB1ElEQVR4nO3d4VHCQBCG4V2G/9CBdmBKsAPpQEuxBK1A7YASpINYgaGDUMEyFy4OJAQhd0cYeJ8Zxz+SOS7MfNnjvFUzk0umqpmITI8c4il/2/SYaBrcmCaJro3btrjgd1+KSD7wGHI/jnMpzWzo94xEgsJSVZsBc+9/mrqCyAXbAzcXAI62SvwgkvJB5zvBNXMzS/5Q1ApLVZ36aqiu0rYD0P2+Sz0oAAAG8tNYkZib2dtfWKrqp68ACUMAADZWZjYdyyYoX0XkmYkBAGDHRFVnVWWpqiWbUAAA2Ot95BKToAQAoFM2EpEZ8wMAQKdMRaRgUw8AAN1cWF72qQQAAAxrMeIGAABwUE5lCQBAt1W9wQcAALS5oJyZWUFYAgCwy4Xkl6sozaw6z9ad4LNkNywARLH0/2EQU4rDx2XgzjBJO7RsnXF+yL4GH6U/mL015+47y7mIPKUaNICrE6M1WIwAKCIFU+GW2SJcB1ds7D+0hCVwnNDKITQkQl9/lnZGwLVR33brlzuLHpqtbE4R0pg3pKKgQS+Ak9UHqec0YY4mpPLoWzWEfPfAEhQA/KMOyxcR+TjDZPXt8B0SBn0DiOUqAEBlu/nzvp1BXVjKAgDcBhFZA7dBkkZ9pTtFAAAAAElFTkSuQmCC);
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  z-index: 2;
+}
+
+.headline--hide .char {
+  --name: hide-jump;
+  --del: calc(var(--char-index) * 0.10s + 1s);
+  --td: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --dir: alternate;
+  transform-origin: 50% 100%;
+  transform: translateY(100%);
+}
+
+
+@-webkit-keyframes hide-jump {
+
+  0%,
+  10% {
+    transform: translateY(100%);
+  }
+
+  15% {
+    transform: translateY(100%);
+  }
+
+  20%,
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hide-jump {
+
+  0%,
+  10% {
+    transform: translateY(100%);
+  }
+
+  15% {
+    transform: translateY(100%);
+  }
+
+  20%,
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes jump-hide {
+
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+
+  15% {
+    transform: translateY(0%);
+  }
+
+  20%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes jump-hide {
+
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+
+  15% {
+    transform: translateY(0%);
+  }
+
+  20%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes hide-cover {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hide-cover {
+  0%
+ {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* h2-scroll */
+
+h2.splitting .char {
+  transition: transform 0.3s cubic-bezier(0.3, 0, 0.3, 1), opacity 0.3s linear;
+  transition-delay: calc( 20ms * var(--char-index) );
+}
+h2.splitting[data-scroll=out] .char {
+  opacity: 0.1;
+  transform: translateY(0.45em);
+}

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@3.3/pics/bgi.png');
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/featherpenpointer.cur), auto;
+}
+
+.el-header {
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.el-header,
+.el-footer {
+    /* background-color: rgb(95, 158, 160); */
+    color: black;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgb(7, 136, 250);
+}
+
+.el-header ul li {
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22923),auto; */
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+    user-select: none;
+}
+
+.el-header ul li {
+    color: rgb(7, 136, 250);
+}
+
+.el-menu-item,
+.el-submenu__title {
+    font-size: 17px;
+    color: wheat;
+}
+
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-main {
+    color: #333;
+    text-align: center;
+}
+
+body>.el-container {
+    margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+.compass {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 5%;
+    top: 80%;
+}
+
+.compass img {
+    transition: transform ease .3s;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+
+.navbar {
+    padding-top: 30px;
+    width: 100%;
+    height: 80px;
+    background-color: transparant;
+    overflow: hidden;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.navbar li {
+    margin-right: 80px;
+    float: left;
+    font-size: 16px;
+    list-style: none;
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22923),auto; */
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+    user-select: none;
+}
+
+.navbar li img{
+    width: 24px;
+}
+
+.navbar li a{
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=22923),auto; */
+    cursor: url(https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@2.0/pics/HANDS%20CURSOR%203.cur), auto;
+    user-select: none;
+}
+
+
+.nav_inside {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.nav_inside li .navBox{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(240, 236, 228);
+    border: 3px solid #FFF;
+}
+.nav_inside li .navBox a{
+    display: inline-block;
+    color: black;
+
+}
+
+
+iframe{
+    user-select: none;
+
+}
+
