@@ -14,7 +14,7 @@
     <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
     <!-- 引入组件库 -->
     <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
-    <title>Document</title>
+    <title>Blog</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script> -->
     <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="css/signboard.css">
@@ -165,17 +165,19 @@
                                 d="M377,258.94a63,63,0,0,1-5.58,7,50.61,50.61,0,0,1-6.6,6.07,36.68,36.68,0,0,1-7.14,4.31,17.31,17.31,0,0,1-7.1,1.64,10.32,10.32,0,0,1-3.89-.86,11.09,11.09,0,0,1-3.82-2.67,13,13,0,0,1-2.75-4.67,16.17,16.17,0,0,1-.61-7,21.53,21.53,0,0,1,2.09-7.09,32.61,32.61,0,0,1,4.35-6.85,24.69,24.69,0,0,1,5.82-5.17,12.08,12.08,0,0,1,6.52-2.05q3.12,0,4.52,1.56a5,5,0,0,1,1.23,3.85,12,12,0,0,1-1.44,4.68,18.75,18.75,0,0,1-2.83,3.85,28.43,28.43,0,0,1-3.49,3.12q-1.85,1.4-3.48,2.54l-3.45,2.34c-1.09.74-2.05,1.41-2.87,2a9,9,0,0,0,.74,3.45,6.69,6.69,0,0,0,1.64,2.25,5.74,5.74,0,0,0,2.26,1.23,9,9,0,0,0,2.58.37,11.54,11.54,0,0,0,5.82-1.76,39.75,39.75,0,0,0,5.95-4.27,63.86,63.86,0,0,0,5.42-5.21q2.49-2.7,4.14-4.67a2.17,2.17,0,0,1,1.19-.78,1.16,1.16,0,0,1,1,.16,1.18,1.18,0,0,1,.37,1A3.11,3.11,0,0,1,377,258.94ZM356,246.3a4.2,4.2,0,0,0-2.34,1,12.44,12.44,0,0,0-2.67,2.83,25,25,0,0,0-2.46,4.51,26.69,26.69,0,0,0-1.72,6.11c.66-.49,1.37-1,2.13-1.52s1.53-1.07,2.3-1.68a22.92,22.92,0,0,0,4.92-4.75,8.35,8.35,0,0,0,1.56-3.53,3.37,3.37,0,0,0-.33-2.26A1.62,1.62,0,0,0,356,246.3Z"
                                 transform="translate(-190.62 -213.18)"></path>
                         </svg>
-                        <svg class="svg_arrow" width="589" height="260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="svg_arrow" viewBox="0 0 589 260" width="589" height="260" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M2 100.272c69.652 28.192 151.433 25.149 225.333 27.555 45.422 1.479 92.561-.024 138-2 38.521-1.675 79.331-6.381 116.556-16.666 30.497-8.427 66.588-17.81 89.667-40.89 11.111-11.11 20.826-30.791 13.111-46.222-6.838-13.674-26.145-19.092-40.223-19.666C502.782.683 461.424 4.98 420 8.716c-63.213 5.7-126.561 22.687-182.889 52-40.211 20.926-84.031 52.546-81 102.556 2.014 33.236 43.321 52.045 69.556 62.777 8.09 3.31 29.222 8.223 29.222 8.223l27.111 6"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                style="--length:1293.37px" \ class="QYbbQpfC_0"></path>
+                                style="--length:1293.37px" class="QYbbQpfC_0"></path>
                             <path
                                 d="M265.526 212c6.262 9.303 12.282 19.017 19.556 27.556 3.402 3.994-5.858 5.71-8.445 7.333-3.425 2.149-25.278 13.195-21.111 11.111"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 style="--length:71.9139px" class="QYbbQpfC_1"></path>
                         </svg>
-                        <iframe width="500px" height="300px" id="Tom_frame" src="Tom.svg" frameborder="0"></iframe>
+                        <div class="Tom_frame_container">
+                            <iframe  loading="lazy" width="100%" height="100%" id="Tom_frame" frameborder="0"></iframe>
+                        </div>
                     </div>
                     <div id="compass" class="compass">
                         <img id="compass_img" src="https://cdn.jsdelivr.net/gh/ClarkKenty/CDN@3.3/pics/compass.png"
@@ -195,7 +197,7 @@
                         <span class='circle'></span>
                     </div>
                     <div class='content'>
-                        <p>自己设计的博客项目，前端使用html+css+js，后端使用java SSM框架。目前只实现了基本功能，还有大量功能未完善，如分类，音乐盒,Book页面的外观优化，对移动端的适配等，后续会慢慢加上更多的功能。🥪</p>
+                        <p>自己设计的博客项目，前端使用html+css+js以及Thymeleaf模板引擎，后端使用java SSM框架。目前只实现了基本功能，还有大量功能未完善，如分类，音乐盒,Book页面的外观优化，对移动端的适配等，后续会慢慢加上更多的功能。🥪</p>
                     </div>
                 </li>
                 <li class='work'>
@@ -221,6 +223,10 @@
     var btnDraw = document.querySelector('.btn-draw')
     var btnErase = document.querySelector('.btn-erase')
     var Tom_frame = document.querySelector('#Tom_frame');
+    
+     window.onload = ()=>{
+        Tom_frame.src = "Tom.svg";
+    }
 
     Tom_frame.onload = () => {
         var d = Tom_frame.contentWindow;

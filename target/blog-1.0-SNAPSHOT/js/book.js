@@ -1,4 +1,9 @@
 (function () {
+    let tags = document.querySelectorAll('.tags');
+    for(let i = 0;i<tags.length;i++){
+        let temp = tags[i].innerHTML;
+        tags[i].innerHTML = `&nbsp&nbsp${temp}&nbsp&nbsp`;
+    }
     let articleContainer = document.getElementById('articleContainer');
     let Allarticles = articleContainer.querySelectorAll('.articleBox');
     let page = 1;
@@ -20,9 +25,9 @@
     BeforerightPageInner.className = "innerpage";
     AfterleftPageInner.className = "innerpage";
     AfterrightPageInner.className = "innerpage";
-    for(let i = 0;i<Allarticles.length;i++){
-        Allarticles[i].setAttribute("num",i+1);
-    }
+    // for(let i = 0;i<Allarticles.length;i++){
+    //     Allarticles[i].setAttribute("num",i+1);
+    // }
     function generatePages() {
        
         startIndex = (page - 1) * 6;

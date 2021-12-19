@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/atom-one-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/languages/go.min.js"></script>
     <title>Compose</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
@@ -45,7 +51,6 @@
 
         .text {
             margin: 35px 10px 10px 55px;
-            line-height: 25px;
             font-family: 'Indie Flower';
             outline: none;
         }
@@ -122,6 +127,39 @@
             width: 19.5vw;
             height: 30vh;
         }
+
+        .markdownParse {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 1px solid #000;
+            cursor: pointer;
+            -webkit-text-size-adjust: 100%;
+            font-weight: 300;
+            font-size: 16px;
+            font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            text-decoration: none;
+            text-align: center;
+            height: 40px;
+            padding: 0 40px;
+            display: inline-block;
+            appearance: none;
+            cursor: pointer;
+            border: none;
+            box-sizing: border-box;
+            transition-property: all;
+            transition-duration: .3s;
+            color: #EEE;
+            border-radius: 200px;
+            border-style: solid;
+            border-width: 1px;
+            line-height: 38px;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            margin: 5px;
+            border-color: #151515;
+            background: linear-gradient(#2f2f2f, #151515);
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -135,11 +173,12 @@
     <textarea id="descriptionInput" class="description" placeholder="(Description Here...)"></textarea>
     <div id="submit" class="submit"><button>Finish</button></div>
     <div class="paper" id="paper">
+        <div class="markdownParse" id="markdownParse">Markdown Preview</div>
         <div class="lines">
             <div class="titleWrap">
                 <span contenteditable="plaintext-only" id="ArticleTitle">(title)</span>
             </div>
-            <div class="text" id="writed" contenteditable="plaintext-only" spellcheck="false">(Starts Here...)</div>
+            <div class="text" id="writed" contenteditable="plaintext-only" spellcheck="false">(Starts Here...) </div>
         </div>
         <div class="holes hole-top"></div>
         <div class="holes hole-middle"></div>
@@ -155,6 +194,28 @@
         </div>
     </div>
     <script>
+        let isParsed = false;
+        let markdownParse = document.getElementById('markdownParse');
+        let source = '';
+        markdownParse.onclick = () => {
+            if (!isParsed) {
+                isParsed = true;
+                source = document.getElementById('writed').innerText;
+                document.getElementById('writed').innerHTML = marked.parse(source);
+                document.getElementById('writed').setAttribute('contenteditable', 'false');
+                document.getElementById('markdownParse').innerText = 'Edit';
+                document.querySelectorAll('pre code').forEach((el) => {
+                    hljs.highlightElement(el);
+                });
+            }
+            else {
+                isParsed = false;
+                document.getElementById('writed').innerText = source;
+                document.getElementById('writed').setAttribute('contenteditable', 'plaintext-only');
+                document.getElementById('markdownParse').innerText = 'Markdown Preview';
+
+            }
+        }
         function checkSuc() {
             let submitRes = document.getElementById('submitRes');
             if (submitRes.value != '') {
@@ -165,14 +226,21 @@
                     alert('提交失败！');
                 }
             }
-            
+
         }
         setTimeout(() => {
-                checkSuc()
-            }, 500);
+            checkSuc()
+        }, 500);
         document.getElementById('submit').onclick = () => {
+            let toSubmit = ``;
+            if (isParsed) {
+                toSubmit = source;
+            }
+            else {
+                toSubmit = document.getElementById('writed').innerText;
+            }
             document.getElementById('title').value = document.getElementById('ArticleTitle').innerText;
-            document.getElementById('content').value = document.getElementById('writed').innerText;
+            document.getElementById('content').value = toSubmit;
             document.getElementById('description').value = document.getElementById('descriptionInput').value;
             document.getElementById('form').submit();
 

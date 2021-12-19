@@ -23,7 +23,7 @@
         </svg>
     </div>
     <div class="articleContainer" id="articleContainer" style="display: none;">
-        <div class="articleBox" th:each="content : ${contents}">
+        <div class="articleBox" th:each="content : ${contents}" th:attr="num=${content.cid}">
             <div class="title">
                 <h4 th:text="${content.title}"></h4>
             </div>
