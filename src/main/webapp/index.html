@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css?v=1"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/svg.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet"> -->
     <!-- import Vue before Element -->
     <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
     <!-- 引入组件库 -->
@@ -190,7 +190,29 @@
             <h2>Blog Timeline</h2>
             <ul id='timeline'>
                 <li class='work'>
-                    <input class='radio' id='work1' name='works' type='radio' checked>
+                    <input class='radio' id='work3' name='works' type='radio' >
+                    <div class="relative">
+                        <label for='work3'>To be continued...</label>
+                        <span class='date'>?? Jun 2022</span>
+                        <span class='circle'></span>
+                    </div>
+                    <div class='content'>
+                        <p>To be continued...</p>
+                    </div>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work2' name='works' type='radio' checked >
+                    <div class="relative">
+                        <label for='work2'>修复若干bug</label>
+                        <span class='date'>24 Dec 2021</span>
+                        <span class='circle'></span>
+                    </div>
+                    <div class='content'>
+                        <p>修复因使用Google CDN导致的国内连接问题，修复部分浏览器缩放导致的分辨率问题，修复因未设置图片的min-width导致的图片溢出问题，增加了文章页面对部分移动设备的适配，将mysql数据库中的文章字段编码由UTF-8改为UTF-8mb4，以修复当文章中包含emoji表情时导致的插入异常。</p>
+                    </div>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work1' name='works' type='radio'>
                     <div class="relative">
                         <label for='work1'>Created</label>
                         <span class='date'>12 Dec 2021</span>
@@ -198,17 +220,6 @@
                     </div>
                     <div class='content'>
                         <p>自己设计的博客项目，前端使用html+css+js以及Thymeleaf模板引擎，后端使用java SSM框架。目前只实现了基本功能，还有大量功能未完善，如分类，音乐盒,Book页面的外观优化，对移动端的适配等，后续会慢慢加上更多的功能。🥪</p>
-                    </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work2' name='works' type='radio'>
-                    <div class="relative">
-                        <label for='work2'>To be continued...</label>
-                        <span class='date'>?? Jun 2022</span>
-                        <span class='circle'></span>
-                    </div>
-                    <div class='content'>
-                        <p>To be continued...</p>
                     </div>
                 </li>
             </ul>

@@ -5,8 +5,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* //16px */
     font-size: 1.041666666vw;
-
 }
 
 body {

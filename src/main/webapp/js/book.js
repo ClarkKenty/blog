@@ -99,7 +99,7 @@
                     window.location.href = `/article?num=${articleBoxes[i].getAttribute('num')}&back=${page}`;
                 }, 1000);
                 let click_cover = document.querySelector('.click_cover');
-                click_cover.style = `left:${e.clientX}px;top:${e.clientY}px;transform:scale(200)`;
+                click_cover.style = `left:${e.clientX/16}rem;top:${e.clientY/16}rem;transform:scale(200)`;
             }
         }
     }
@@ -119,9 +119,9 @@
         let innerflips = document.querySelectorAll('.flip>.innerflip');
         for (let i = 0; i < innerflips.length; i++) {
             innerflips[i].innerHTML = flipOver;
-            innerflips[i].querySelector('.innerpage').style = `margin-left: -${-29 + 50 * (13 - i)}px;`;
+            innerflips[i].querySelector('.innerpage').style = `margin-left: -${(-29 + 50 * (13 - i))/16}rem;`;
             if (i == 13) {
-                innerflips[i].style = "padding-left:4px;";
+                innerflips[i].style = "padding-left:0.25rem;";
             }
         }
         let articleBox = document.querySelectorAll('#flip .articleBox');//address display bug while flipping
@@ -133,7 +133,7 @@
         let innerflips = document.querySelectorAll('.flip .f2nest>.innerflip');
         for (let i = 0; i < innerflips.length; i++) {
             innerflips[i].innerHTML = flipBefore;
-            innerflips[i].querySelector('.innerpage').style = `margin-left: -${-25 + 50 * (i)}px;`;
+            innerflips[i].querySelector('.innerpage').style = `margin-left: -${(-25 + 50 * (i))/16}rem;`;
 
         }
         let articleBox = document.querySelectorAll('#flip .articleBox');

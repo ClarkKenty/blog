@@ -10,7 +10,7 @@
       </options>
     </properties>
     <root id="archive" name="blog-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="blog:war exploded" />
+      <element id="artifact" artifact-name="blog" />
     </root>
   </artifact>
 </component>

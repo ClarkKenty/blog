@@ -6,11 +6,16 @@ body {
   transition: background-color 1.5s ease;
 }
 
-.mainText{
+.mainText {
   margin-top: 40px;
 }
 
-.pinkToBlue{
+.mainText img {
+  max-width: 80%;
+  max-height: 40vh;
+}
+
+.pinkToBlue {
   animation: pinkToBlue 1.5s ease 1 forwards;
 }
 
@@ -46,7 +51,7 @@ h1 {
   left: 10%;
   background-color: rgb(260, 252, 236);
   transform-origin: 50% 50%;
-  transition: transform 1.5s ease-in-out,opacity 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
   animation: scrollPage 1.5s ease-in-out 1;
   box-sizing: border-box;
   box-shadow: 0 0 5px gray;
@@ -101,9 +106,6 @@ a {
   color: var(--text-color);
 }
 
-p {
-  margin-bottom: 2em;
-}
 
 strong {
   display: inline-block;
@@ -198,9 +200,25 @@ h2:after {
   width: 32px;
   height: 32px;
   z-index: 99999;
-  transition: transform .5s ease,top 1s ease;
+  transition: transform .5s ease, top 1s ease;
 }
 
 .close:hover {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width: 960px){
+  h1{
+    font-size: 16px;
+  }
+  .headline{
+    height: 25px;
+  }
+  .page{
+    font-size: 12px;
+    padding-top: 20px;
+  }
+  .underLine{
+    height: 2px;
+  }
 }

@@ -72,8 +72,6 @@ public class ArticleController {
     }
     @RequestMapping(value = "/compose")
     public String compose(){
-
         return "/compose";
     }
-
 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.js"></script>
+    <link rel="stylesheet" href="css/titleStyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.0/dist/splitting.css">
+    <link rel="stylesheet" href="css/style_article.css?v=1.3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/atom-one-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/languages/go.min.js"></script>
+
+</head>
+
+<body class="pinkToBlue">
+<input id="pageNum" type="text" style="display: none" th:value="${param.back}">
+    <h1 data-splitting class="headline headline--hide" ><span id="title" style="position: relative;" th:text="${content.title}"></span></h1>
+    <div class="close" id="close">
+        <svg t="1638350625034" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="7720" width="32" height="32">
+            <path
+                d="M717.154 698.893c-9.841 9.665-25.656 9.522-35.319-0.318l-157.178-160.05-157.178 160.05c-9.666 9.84-25.478 9.983-35.319 0.318-9.842-9.664-9.985-25.479-0.322-35.319L489.65 502.879 331.838 342.184c-9.663-9.841-9.52-25.658 0.322-35.319 9.841-9.666 25.653-9.523 35.319 0.317l157.178 160.05 157.178-160.05c9.663-9.84 25.478-9.983 35.319-0.317 9.841 9.661 9.985 25.478 0.321 35.319L559.663 502.879l157.812 160.695c9.664 9.84 9.52 25.655-0.321 35.319z m229.713 83.48c-7.294 11.706-22.697 15.284-34.405 7.991-11.706-7.292-15.285-22.696-7.992-34.404 45.244-72.624 69.579-156.469 69.579-243.961C974.049 256.82 767.182 49.952 512 49.952S49.952 256.82 49.952 511.999c0 255.181 206.866 462.048 462.048 462.048 106.002 0 206.471-35.768 287.646-100.434 10.789-8.592 26.503-6.814 35.096 3.975 8.593 10.792 6.816 26.507-3.973 35.099C740.825 984.33 629.411 1023.999 512 1023.999c-282.771 0-512-229.228-512-512S229.229-0.002 512-0.002c282.769 0 512 229.229 512 512.001 0 96.897-26.987 189.882-77.133 270.374z"
+                p-id="7721"></path>
+        </svg>
+    </div>
+    <div id="markDownRaw" th:text="${content.content_text}" style="display: none"></div>
+    <div class="page" id="page">
+        <div class="opacityFilter">
+            <div class="filterWave"></div>
+        </div>
+        <div class="mainText" id="mainText" th:text="${content.content_text}">
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    let ToParse = document.getElementById('markDownRaw').innerText;
+
+    document.getElementById('mainText').innerHTML =
+        marked.parse(ToParse);
+    setTimeout(() => {
+        document.querySelector('.close').style = "top:20px;";
+    }, 3000);
+    let h2s = document.querySelectorAll('h2');
+    for (let i = 0; i < h2s.length; i++) {
+        h2s[i].setAttribute('data-splitting', '');
+    }
+    Splitting();
+    ScrollOut({
+        targets: '[data-splitting]'
+    })
+    document.querySelector("h1 #title").innerHTML += `<div class="underLine"></div>`;
+    document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+    });
+
+    let page = document.querySelector('.page');
+    document.querySelector('.opacityFilter').style = `animation: filterDown ${Math.sqrt(page.clientHeight / window.screen.height / 1.3)}s cubic-bezier(.88,0,.34,.1) 1s 1 forwards;`
+    setTimeout(() => {
+        document.querySelector('.opacityFilter').style = "display:none";
+    }, Math.sqrt(page.clientHeight / window.screen.height / 1.3) * 1000 + 1000);
+
+    document.getElementById('close').onclick = () => {
+        setTimeout(() => {
+            window.location.href ='/book?back='+document.getElementById('pageNum').value;
+        }, 2000);
+        document.getElementById('page').innerHTML = ``;
+        page.style = "transform:scaleX(0.0001);opacity:0;";
+        document.body.classList.remove('pinkToBlue');
+        document.body.style = "background-color:rgb(240, 222, 219);";
+        let chars = document.querySelectorAll('.char');
+        for (let i = 0; i < chars.length; i++) {
+            chars[i].style = "animation: jump-hide 2.5s ease 1;";
+        }
+        document.querySelector('#title .underLine').style = "transform:scale(0.0001);";
+    }
+</script>
+
+</html>
